@@ -13,5 +13,5 @@ modules:
        version: 0.0.1-${timestamp}
     build-parameters:
       builder: grunt
-      build-result: dist
+      build-result: target
       
