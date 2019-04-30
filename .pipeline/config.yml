@@ -3,7 +3,7 @@ steps:
     buildTarget: 'NEO'
     mtaJarLocation: 'c:/mta.jar'
   neoDeploy:
-    neoHome: 'C:/neo-java-web-sdk-3.9.9'
+    neoHome: 'C:/neo'
     neo:
       credentialsId: 'CM'
       account: 'P2001269540'
