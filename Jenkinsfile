@@ -77,10 +77,9 @@ node() {
   }
   
   stage("Unit Testing"){
-    "NPL":{
-        sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
-        	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-    }
+    sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+    sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
+    
   }
 
   stage("Deploy Fiori App"){
