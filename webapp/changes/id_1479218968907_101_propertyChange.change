@@ -1,0 +1,28 @@
+{
+	"fileName": "id_1479218968907_101_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"reference": "nw.epm.refapps.st.prod.manage.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "enableAutoBinding",
+		"oldValue": false,
+		"newValue": true
+	},
+	"selector": {
+		"id": "nw.epm.refapps.st.prod.manage::sap.suite.ui.generic.template.ListReport.view.ListReport::SEPMRA_C_PD_Product--listReport",
+		"type": "sap.ui.comp.smarttable.SmartTable"
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/nw.epm.refapps.st.prod.manage/changes/",
+	"creation": "2016-11-15T14:09:29.078Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": ""
+	}
+}

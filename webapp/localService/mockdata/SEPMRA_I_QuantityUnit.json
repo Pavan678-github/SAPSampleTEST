@@ -1,0 +1,77 @@
+[{
+	"UnitOfMeasure": "BAG",
+	"UnitOfMeasure_Text": "Bag",
+	"UnitOfMeasureISOCode": "BG"
+}, {
+	"UnitOfMeasure": "BT",
+	"UnitOfMeasure_Text": "Bt.",
+	"UnitOfMeasureISOCode": "BO"
+}, {
+	"UnitOfMeasure": "CV",
+	"UnitOfMeasure_Text": "Case",
+	"UnitOfMeasureISOCode": "CS"
+}, {
+	"UnitOfMeasure": "DEG",
+	"UnitOfMeasure_Text": "deg",
+	"UnitOfMeasureISOCode": "DD"
+}, {
+	"UnitOfMeasure": "DR",
+	"UnitOfMeasure_Text": "Dr",
+	"UnitOfMeasureISOCode": "DR"
+}, {
+	"UnitOfMeasure": "DZ",
+	"UnitOfMeasure_Text": "dz",
+	"UnitOfMeasureISOCode": "DZN"
+}, {
+	"UnitOfMeasure": "EA",
+	"UnitOfMeasure_Text": "EA",
+	"UnitOfMeasureISOCode": "EA"
+}, {
+	"UnitOfMeasure": "GRO",
+	"UnitOfMeasure_Text": "gro",
+	"UnitOfMeasureISOCode": "GRO"
+}, {
+	"UnitOfMeasure": "CAN",
+	"UnitOfMeasure_Text": "Can",
+	"UnitOfMeasureISOCode": "CA"
+}, {
+	"UnitOfMeasure": "CAR",
+	"UnitOfMeasure_Text": "Car",
+	"UnitOfMeasureISOCode": "CT"
+}, {
+	"UnitOfMeasure": "CRT",
+	"UnitOfMeasure_Text": "Crate",
+	"UnitOfMeasureISOCode": "BX"
+}, {
+	"UnitOfMeasure": "AU",
+	"UnitOfMeasure_Text": "AU",
+	"UnitOfMeasureISOCode": "C62"
+}, {
+	"UnitOfMeasure": "PAA",
+	"UnitOfMeasure_Text": "PAIR",
+	"UnitOfMeasureISOCode": "PR"
+}, {
+	"UnitOfMeasure": "PAC",
+	"UnitOfMeasure_Text": "PAC",
+	"UnitOfMeasureISOCode": "PK"
+}, {
+	"UnitOfMeasure": "PAL",
+	"UnitOfMeasure_Text": "PAL",
+	"UnitOfMeasureISOCode": "PF"
+}, {
+	"UnitOfMeasure": "PRS",
+	"UnitOfMeasure_Text": "PRS",
+	"UnitOfMeasureISOCode": "IE"
+}, {
+	"UnitOfMeasure": "ROL",
+	"UnitOfMeasure_Text": "ROL",
+	"UnitOfMeasureISOCode": "RO"
+}, {
+	"UnitOfMeasure": "PC",
+	"UnitOfMeasure_Text": "PC",
+	"UnitOfMeasureISOCode": "PCE"
+}, {
+	"UnitOfMeasure": "TS",
+	"UnitOfMeasure_Text": "thou",
+	"UnitOfMeasureISOCode": "MIL"
+}]

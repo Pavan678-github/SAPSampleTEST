@@ -1,0 +1,87 @@
+{
+  "welcomeFile": "/webapp/test/flpSandbox.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "RefAppsBackend",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "OData service"
+    },
+    {
+      "path": "/sap/public/bc/NWDEMO_MODEL",
+      "target": {
+        "type": "destination",
+        "name": "RefAppsBackend",
+        "entryPath": "/sap/public/bc/NWDEMO_MODEL"
+      },
+      "description": "Images from MIME repository"
+    },
+    {
+      "path": "/sap/bc/lrep",
+      "target": {
+        "type": "destination",
+        "name": "RefAppsBackend",
+        "entryPath": "/sap/bc/lrep"
+      },
+      "description": "LREP"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "preferLocal": true,
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/sap/ui5/1/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "preferLocal": true
+      },
+      "description": "SAPUI5 dist layer resources"
+    },
+    {
+      "path": "/",
+      "target": {
+        "type": "application",
+        "name": "flpsandbox",
+        "preferLocal": true
+      },
+      "description": "Subscribed Fiori LaunchPad"
+    },
+    {
+      "path": "/webapp/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/webapp/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ]
+}
