@@ -6,5 +6,5 @@ steps:
     neoHome: 'C:/neo-java-web-sdk-3.9.9'
     neo:
       credentialsId: 'CM'
-      account: 'p2001269540trial'
+      account: 'P2001269540'
       host: 'hana.ondemand.com'
