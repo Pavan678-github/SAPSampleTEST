@@ -18,7 +18,7 @@ pipeline {
         echo 'prepare stage'
       }
     }
-    stage('test') {
+    stage('dev test') {
       steps {
         echo 'prepare stage'
       }
@@ -28,7 +28,7 @@ pipeline {
         echo 'prepare stage'
       }
     }
-    stage('test') {
+    stage('qa test') {
       steps {
         echo 'prepare stage'
       }
@@ -38,7 +38,7 @@ pipeline {
         echo 'prepare stage'
       }
     }
-    stage('test') {
+    stage('preprod test') {
       steps {
         echo 'prepare stage'
       }
