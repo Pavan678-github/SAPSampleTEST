@@ -4,6 +4,16 @@
     "description": "sample abap sap fiori package",
     "private": true,     
     "devDependencies": {
-        "grunt": "1.0.1"
+        "grunt": "1.0.1",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^3.0.0",
+        "grunt-contrib-uglify": "^4.0.1",
+        "grunt-encoding": "^0.3.0",
+        "grunt-eslint": "^21.0.0",
+        "grunt-nexus-deployer": "^0.2.2",
+        "grunt-openui5": "^0.15.0",
+        "grunt-zip": "^0.18.2"
+        
     }
 }
