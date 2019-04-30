@@ -34,7 +34,7 @@ node() {
         		
   def STEP_CONFIG_NEO_DEPLOY='neoDeploy'
   def STEP_CONFIG_MTA_BUILD='mtaBuild'
-  def sap_pipeline = load "sap.groovy"
+  def sap_pipeline = load "src/sap.groovy"
   stage("Clone sources and setup environment"){
     deleteDir()
     Map neoDeployConfiguration, mtaBuildConfiguration
