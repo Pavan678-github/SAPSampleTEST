@@ -73,13 +73,13 @@ node() {
     "Unit Tests":{
         
         	def LABEL = "NPL"
-        	def HOST = "vhcals4ci.dummy.nodomain"
+        	def HOST = "vhcals4hci.dummy.nodomain"
         	def CREDENTIAL = "NPL"
         	
         	
         	
         	def sap_pipeline = load "src/sap.groovy"
-        	//sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+        	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
         	
         
