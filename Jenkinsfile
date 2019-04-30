@@ -31,10 +31,15 @@ node() {
   SRC = "${WORKSPACE}/${APP_PATH}"
 
   def CONFIG_FILE
+  def LABEL = "NPL"
+  def HOST = "vhcalnplci.dummy.nodomain"
+  def CREDENTIAL = "NPL"
 
+  git poll: true, branch: BRANCH, url: GITURL
+        		
   def STEP_CONFIG_NEO_DEPLOY='neoDeploy'
   def STEP_CONFIG_MTA_BUILD='mtaBuild'
-
+  def sap_pipeline = load "sap-pipeline/sap.groovy"
   stage("Clone sources and setup environment"){
     deleteDir()
     Map neoDeployConfiguration, mtaBuildConfiguration
@@ -75,13 +80,7 @@ node() {
 
 parallel (
     "NPL":{
-        node {
-        	def LABEL = "NPL"
-        	def HOST = "vhcalnplci.dummy.nodomain"
-        	def CREDENTIAL = "NPL"
-        	
-        	git poll: true, branch: BRANCH, url: GITURL
-        		
+        
         	stage('[' + LABEL + '] Preparation') {
         		deleteDir()
         		dir('sap-pipeline') {
@@ -89,10 +88,10 @@ parallel (
         		}
         	}
         	
-        	def sap_pipeline = load "sap-pipeline/sap.groovy"
+    
         	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-        	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
+        	//sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
         }
     }
   
