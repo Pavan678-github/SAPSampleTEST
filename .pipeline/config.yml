@@ -1,10 +1,10 @@
 steps:
   mtaBuild:
     buildTarget: 'NEO'
-    mtaJarLocation: '/opt/sap/mta.jar'
+    mtaJarLocation: 'c:/mta.jar'
   neoDeploy:
-    neoHome: '/opt/sap/neo-sdk/'
+    neoHome: 'C:/neo-java-web-sdk-3.9.9'
     neo:
-      credentialsId: 'NEO_DEPLOY'
-      account: 'your-account-id'
+      credentialsId: 'CM'
+      account: 'p2001269540trial'
       host: 'hana.ondemand.com'
