@@ -30,7 +30,7 @@ def abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) {
 	
 	withCredentials([usernamePassword(credentialsId: CREDENTIAL, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {	
 		stage('[' + LABEL + '] ABAP Code Inspector') {
-			dir('sap-pipeline') {
+			dir('src') {
 					bat "newman run abap_sci.postman_collection.json --insecure --bail " +
 					"--environment NPL.postman_environment.json " +
 					"--timeout-request 120000 " +
@@ -51,7 +51,7 @@ def sap_api_test(LABEL,HOST,CREDENTIAL) {
 	
 	withCredentials([usernamePassword(credentialsId: CREDENTIAL, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 		stage('[' + LABEL + '] SAP API Tests') {
-			dir('sap-pipeline') {
+			dir('src') {
 				try {
 					bat "newman run SimpleRESTTest.postman_collection.json --insecure --bail " + 
 					"--environment NPL.postman_environment.json " + 
