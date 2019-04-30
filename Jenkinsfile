@@ -79,9 +79,11 @@ node() {
         	
         	
         	def sap_pipeline = load "src/sap.groovy"
-        	//sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+      try{
+        	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-        	
+      }
+      catch(Exception e){}
         
     })
   /**stage("Unit Testing"){
