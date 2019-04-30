@@ -35,11 +35,11 @@ node() {
   def HOST = "vhcalnplci.dummy.nodomain"
   def CREDENTIAL = "NPL"
 
-  git poll: true, branch: BRANCH, url: GITURL
+  //git poll: true, branch: BRANCH, url: GITURL
         		
   def STEP_CONFIG_NEO_DEPLOY='neoDeploy'
   def STEP_CONFIG_MTA_BUILD='mtaBuild'
-  def sap_pipeline = load "sap-pipeline/sap.groovy"
+  //def sap_pipeline = load "sap-pipeline/sap.groovy"
   stage("Clone sources and setup environment"){
     deleteDir()
     Map neoDeployConfiguration, mtaBuildConfiguration
