@@ -70,25 +70,18 @@ node() {
   }
   
   parallel (
-    "NPL":{
+    "Unit Tests":{
         node {
         	def LABEL = "NPL"
         	def HOST = "vhcalnplci.dummy.nodomain"
         	def CREDENTIAL = "NPL"
         	
-        	git poll: true, branch: BRANCH, url: GITURL
-        		
-        	stage('[' + LABEL + '] Preparation') {
-        		deleteDir()
-        		dir('sap-pipeline') {
-        			bat "git clone " + PIPELINE_GITURL + " ."
-        		}
-        	}
+        	
         	
         	def sap_pipeline = load "src/sap.groovy"
         	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-        	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
+        	
         }
     })
   /**stage("Unit Testing"){
