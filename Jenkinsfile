@@ -26,9 +26,7 @@ node() {
   SRC = "${WORKSPACE}/${APP_PATH}"
 
   def CONFIG_FILE
-  def LABEL = "NPL"
-  def HOST = "vhcalsh4ci.dummy.nodomain"
-  def CREDENTIAL = "NPL"
+  
 
   //git poll: true, branch: BRANCH, url: GITURL
         		
@@ -71,11 +69,37 @@ node() {
     }
   }
   
-  stage("Unit Testing"){
+  parallel (
+    "NPL":{
+        node {
+        	def LABEL = "NPL"
+        	def HOST = "vhcalnplci.dummy.nodomain"
+        	def CREDENTIAL = "NPL"
+        	
+        	git poll: true, branch: BRANCH, url: GITURL
+        		
+        	stage('[' + LABEL + '] Preparation') {
+        		deleteDir()
+        		dir('sap-pipeline') {
+        			bat "git clone " + PIPELINE_GITURL + " ."
+        		}
+        	}
+        	
+        	def sap_pipeline = load "src/sap.groovy"
+        	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+        	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
+        	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
+        }
+    })
+  /**stage("Unit Testing"){
+    def LABEL = "NPL"
+    def HOST = "vhcalsh4ci.dummy.nodomain"
+    def CREDENTIAL = "NPL"
     sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
     sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
     
-  }
+    
+  }**/
 
   stage("Deploy Fiori App"){
     dir(SRC){
