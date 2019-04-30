@@ -1,22 +1,10 @@
 {
-  "name": "SAPSample",
-  "version": "1.0.0",
-  "description": "SAP Sample Demo",
-  "private": true,
-  "devDependencies": {
-    "grunt": "0.4.5",
-    "grunt-cli": "1.2.0",
-    "grunt-encoding": "0.3.0",
-    "grunt-eslint": "19.0.0",
-    "grunt-contrib-clean": "1.0.0",
-    "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-cssmin": "1.0.1",
-    "grunt-contrib-uglify": "1.0.1",
-    "grunt-folder-list": "1.1.0",
-    "grunt-mkdir": "1.0.0",
-    "grunt-nexus-deployer": "0.0.8",
-    "grunt-openui5": "0.9.0",
-    "grunt-zip": "0.17.1",
-    "node-rfc": "0.1.11"
-  }
+    "name": "sapFiori1",
+    "version": "0.0.1",
+    "description": "sample abap sap fiori package",
+    "private": true,     
+    "devDependencies": {
+        "grunt": "1.0.1",
+        "@sap/grunt-sapui5-bestpractice-build": "^1.3.17"
+    }
 }

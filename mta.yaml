@@ -1,0 +1,17 @@
+_schema-version: "2.0.0"
+ID: "ee1234"
+version: 0.0.1
+
+parameters:
+  hcp-deployer-version: "1.0.0"
+
+modules:
+  - name: "HelloDemo"
+    type: html5
+    path: .
+    parameters:
+       version: 0.0.1-${timestamp}
+    build-parameters:
+      builder: grunt
+      build-result: dist
+      
