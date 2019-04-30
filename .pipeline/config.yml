@@ -1,13 +1,10 @@
-#Steps Specific Configuration
-general:
-  changeManagement:
-    endpoint: 'https://vhcals4hci:50000/sap/opu/odata/sap/AI_CRM_GW_CM_CI_SRV'
-    credentialsId: 'CM'
-    type: 'SOLMAN'
 steps:
   mtaBuild:
     buildTarget: 'NEO'
-  transportRequestCreate:
-    developmentSystemId: '000'
-  transportRequestUploadFile:
-    applicationId: 'HCP'
+    mtaJarLocation: 'c:/mta.jar'
+  neoDeploy:
+    neoHome: 'C:/neo'
+    neo:
+      credentialsId: 'NEO'
+      account: p2001269540trial
+      host: hanatrial.ondemand.com
