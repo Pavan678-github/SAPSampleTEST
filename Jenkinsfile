@@ -52,8 +52,8 @@ node() {
     }
     MTA_JAR_LOCATION = mtaBuildConfiguration.mtaJarLocation ?: commonPipelineEnvironment.getConfigProperty('MTA_HOME')
     NEO_HOME = neoDeployConfiguration.neoHome ?: commonPipelineEnvironment.getConfigProperty('NEO_HOME')
-    //proxy = commonPipelineEnvironment.getConfigProperty('proxy') ?: ''
-    //httpsProxy = commonPipelineEnvironment.getConfigProperty('httpsProxy') ?: ''
+    proxy =  ''
+    httpsProxy =  ''
   }
 
   stage("Build Fiori App"){
