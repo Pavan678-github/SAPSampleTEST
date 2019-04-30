@@ -8,5 +8,40 @@ pipeline {
         echo 'prepare stage'
       }
     }
+    stage('build') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('deploy dev') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('test') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('deploy qa') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('test') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('deploy preprod') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
+    stage('test') {
+      steps {
+        echo 'prepare stage'
+      }
+    }
   }
 }
