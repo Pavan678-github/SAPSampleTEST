@@ -32,14 +32,14 @@ node() {
 
   def CONFIG_FILE
   def LABEL = "NPL"
-  def HOST = "vhcalnplci.dummy.nodomain"
+  def HOST = "vhcalsh4ci.dummy.nodomain"
   def CREDENTIAL = "NPL"
 
   //git poll: true, branch: BRANCH, url: GITURL
         		
   def STEP_CONFIG_NEO_DEPLOY='neoDeploy'
   def STEP_CONFIG_MTA_BUILD='mtaBuild'
-  //def sap_pipeline = load "sap-pipeline/sap.groovy"
+  def sap_pipeline = load "sap.groovy"
   stage("Clone sources and setup environment"){
     deleteDir()
     Map neoDeployConfiguration, mtaBuildConfiguration
@@ -76,25 +76,13 @@ node() {
     }
   }
   
-  
-
-/**parallel (
+  stage("Unit Testing"){
     "NPL":{
-        
-        	stage('[' + LABEL + '] Preparation') {
-        		deleteDir()
-        		dir('sap-pipeline') {
-        			bat "git clone " + PIPELINE_GITURL + " ."
-        		}
-        	}
-        	
-    
-        	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+        sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-        	//sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
-        }
-  )**/
-  
+    }
+  }
+
   stage("Deploy Fiori App"){
     dir(SRC){
       withEnv(["http_proxy=${proxy}", "https_proxy=${httpsProxy}"]) {
