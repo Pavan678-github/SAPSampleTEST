@@ -71,7 +71,7 @@ node() {
   
   parallel (
     "Unit Tests":{
-        node {
+        
         	def LABEL = "NPL"
         	def HOST = "vhcalnplci.dummy.nodomain"
         	def CREDENTIAL = "NPL"
@@ -82,7 +82,7 @@ node() {
         	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
         	
-        }
+        
     })
   /**stage("Unit Testing"){
     def LABEL = "NPL"
