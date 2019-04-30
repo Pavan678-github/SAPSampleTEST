@@ -73,7 +73,7 @@ node() {
     "Unit Tests":{
         
         	def LABEL = "NPL"
-        	def HOST = "vhcalnplci.dummy.nodomain"
+        	def HOST = "vhcalsh4ci.dummy.nodomain"
         	def CREDENTIAL = "NPL"
         	
         	
