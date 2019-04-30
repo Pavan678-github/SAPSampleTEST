@@ -6,5 +6,5 @@ steps:
     neoHome: 'C:/neo'
     neo:
       credentialsId: 'CM'
-      account: 'P2001269540'
+      account: p2001269540trial
       host: hanatrial.ondemand.com
