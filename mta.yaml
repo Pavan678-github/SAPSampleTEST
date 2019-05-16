@@ -10,7 +10,7 @@ modules:
     type: html5
     path: .
     parameters:
-       version: 0.0.1-34
+       version: 0.0.1-35
     build-parameters:
       builder: grunt
       build-result: target
