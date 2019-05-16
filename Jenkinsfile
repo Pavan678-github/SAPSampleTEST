@@ -3,7 +3,7 @@
 import com.sap.piper.Utils
 import com.sap.piper.ConfigurationLoader
 import com.sap.piper.ConfigurationMerger
-def PACKAGE = '''$REST_SIMPLE'''
+def PACKAGE = '''$SAP_DEMO'''
 def COVERAGE = 80
 def VARIANT = "DEFAULT"
 /**
@@ -32,7 +32,13 @@ node() {
         		
   def STEP_CONFIG_NEO_DEPLOY='neoDeploy'
   def STEP_CONFIG_MTA_BUILD='mtaBuild'
-  
+  def LABEL = "NPL"
+  def HOST = "vhcals4hci.dummy.nodomain"
+  def CREDENTIAL = "NPL"
+        	
+        	
+        	
+        	def sap_pipeline = load "src/sap.groovy"
   stage("Clone sources and setup environment"){
     deleteDir()
     Map neoDeployConfiguration, mtaBuildConfiguration
@@ -72,29 +78,34 @@ node() {
   parallel (
     "Unit Tests":{
         
-        	def LABEL = "NPL"
-        	def HOST = "vhcals4hci.dummy.nodomain"
-        	def CREDENTIAL = "NPL"
         	
-        	
-        	
-        	def sap_pipeline = load "src/sap.groovy"
       try{
         	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
+        	
+      }
+      catch(Exception e){}
+        
+    },
+  "API Tests":{
+        
+        	
+      try{
+        	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
+      }
+      catch(Exception e){}
+        
+    },
+  "Code Scan":{
+        
+        	
+      try{
+        	
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
       }
       catch(Exception e){}
         
     })
-  /**stage("Unit Testing"){
-    def LABEL = "NPL"
-    def HOST = "vhcalsh4ci.dummy.nodomain"
-    def CREDENTIAL = "NPL"
-    sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
-    sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
-    
-    
-  }**/
+ 
 
   stage("Deploy Fiori App"){
     dir(SRC){
