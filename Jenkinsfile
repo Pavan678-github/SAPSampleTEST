@@ -51,7 +51,7 @@ node() {
       } else {
           error "No config file found."
       }
-      def sap_pipeline = load "src/sap.groovy"
+      def sap_pipeline = load "sap.groovy"
       echo "[INFO] using configuration file '${CONFIG_FILE}'."
       setupCommonPipelineEnvironment script: this, configFile: CONFIG_FILE
       prepareDefaultValues script: this
