@@ -116,6 +116,6 @@ node() {
     }
   }
   stage("QA Tests (TOSCA)"){
-    bat '"C:\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCI\Client\ToscaCIClient.exe" -m distributed -r "toscaresult.xml"'
+    bat '"C:/Program Files (x86)/TRICENTIS/Tosca Testsuite/ToscaCI/Client/ToscaCIClient.exe" -m distributed -r "toscaresult.xml"'
   }
 }
