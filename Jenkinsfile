@@ -79,31 +79,31 @@ node() {
   parallel (
     "Unit Tests":{
         
-        	
-      try{
+       sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE) 	
+      /*try{
         	sap_pipeline.abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE)
         	
       }
-      catch(Exception e){}
+      catch(Exception e){}*/
         
     },
   "API Tests":{
         
-        	
-      try{
+        	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
+      /*try{
         	sap_pipeline.sap_api_test(LABEL,HOST,CREDENTIAL)
       }
-      catch(Exception e){}
+      catch(Exception e){}*/
         
     },
   "Code Scan":{
         
-        	
-      try{
+       sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) 	
+      /*try{
         	
         	sap_pipeline.abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT)
       }
-      catch(Exception e){}
+      catch(Exception e){}*/
         
     })
  
