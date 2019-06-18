@@ -117,11 +117,8 @@ node() {
   }
   stage("QA Tests (TOSCA)"){
     bat '"C:/Program Files (x86)/TRICENTIS/Tosca Testsuite/ToscaCI/Client/ToscaCIClient.exe" -m distributed -r "src/toscaresult.xml"'
-    
+    archive 'src/toscaresult.xml'
+    junit 'src/toscaresult.xml'
   }
-  post{
-    always{
-      junit 'src/*.xml'
-    }
-  }
+ 
 }
