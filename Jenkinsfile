@@ -35,7 +35,7 @@ node() {
   def LABEL = "NPL"
   def HOST = "vhcals4hci.dummy.nodomain"
   def CREDENTIAL = "NPL"
-        	
+  def sap_pipeline=''     	
         	
         	
         	
